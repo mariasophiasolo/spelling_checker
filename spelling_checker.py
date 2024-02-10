@@ -27,6 +27,8 @@ enter_text.place(x=65, y= 150)
 enter_text.focus()
 
 # button
+enter_button = Button(window, text="Check", width=10, font=("Glacial Indifference", 20, "bold"), fg="black", bg="pink")
+enter_button.place(x=150, y= 220)
 # command
 
 window.mainloop()
