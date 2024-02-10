@@ -10,6 +10,12 @@ import tkinter
 from tkinter import *
 from textblob import TextBlob
 
+def check_spelling():
+    word = enter_text.get()
+    a = TextBlob(word)
+    corrected_text = str(a.correct())
+    spell.config(text="Corrected text is:\n" + corrected_text)
+
 # create the main window for your program
 window = Tk()
 window.title("Spelling Checker")
@@ -27,8 +33,11 @@ enter_text.place(x=65, y= 150)
 enter_text.focus()
 
 # button
-enter_button = Button(window, text="Check", width=10, font=("Glacial Indifference", 20, "bold"), fg="black", bg="pink")
+enter_button = Button(window, text="Check", width=10, font=("Glacial Indifference", 20, "bold"), fg="black", bg="pink", command=check_spelling)
 enter_button.place(x=150, y= 220)
+
 # command
+spell= Label (window, justify="center", font=("Impact", 20,), fg="pink", bg="black")
+spell.place(x=145, y= 300)
 
 window.mainloop()
