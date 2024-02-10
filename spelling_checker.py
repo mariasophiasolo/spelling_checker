@@ -13,10 +13,12 @@ from textblob import TextBlob
 # create the main window for your program
 window = Tk()
 window.title("Spelling Checker")
-window.geometry("500x400")
+window.minsize(width=500, height=400)
 window.config(background="pink")
 
 # heading
+heading = Label(window, text="Spelling Checker")
+heading.place (x=0, y=0)
 # entry
 # button
 # command
